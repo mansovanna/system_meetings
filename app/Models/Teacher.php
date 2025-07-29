@@ -20,4 +20,7 @@ class Teacher extends Model
     {
         return $this->hasMany(Notification::class);
     }
+
+
+
 }

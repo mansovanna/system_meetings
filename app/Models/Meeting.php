@@ -9,10 +9,12 @@ class Meeting extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'location', 'date', 'start_time', 'end_time'];
+     protected $fillable = [
+        'title', 'description', 'start_date', 'end_date', 'start_time', 'end_time', 'location'
+    ];
 
     public function teachers()
     {
-        return $this->belongsToMany(Teacher::class)->withPivot('status')->withTimestamps();
+        return $this->belongsToMany(Teacher::class);
     }
 }
